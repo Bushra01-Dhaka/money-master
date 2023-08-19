@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Master</title>
+    <!-- css link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    body {
+        height: 100vh;
+    }
+
+    @media screen and (min-width:576px) and (max-width:900px) {
+        .right-container {
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width:576px) {
+        .right-container {
+            text-align: center;
+        }
+
+        .price-shown-box h3 {
+            font-size: 20px;
+        }
+
+
+    }
+</style>
+
+<body>
+
+    <header class="text-center py-8">
+        <h1 class="text-5xl font-bold text-amber-400">Money Master $</h1>
+    </header>
+    <main>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-[80%] mx-auto">
+            <!-- left conainer -->
+            <div class="px-8">
+                <img class="mt-8 w-full mx-auto rounded" src="images/money-photo.avif" alt="">
+            </div>
+
+            <!-- right container -->
+            <div class="right-container mt-8 px-8 mx-auto">
+                <h2 class="text-3xl font-medium my-4">Income</h2>
+                <!-- income input field -->
+                <label for="Income" class="text-2xl">Income: </label>
+                <input id="income-field" type="number" class="rounded-md bg-slate-200  py-2 px-8" name="Income">
+
+
+                <h2 class="text-3xl font-medium my-4 ">Expenses</h2>
+                <label for="Food" class="text-2xl">Food: </label>
+                <input id="food-field" type="number" class="rounded-md mb-4  bg-slate-200 py-2 px-8" name="Food"> <br>
+                <label for="Rent" class="text-2xl pr-2">Rent: </label>
+                <input id="rent-field" type="number" class=" rounded-md mb-4  bg-slate-200 py-2 px-8" name="Rent"> <br>
+                <label for="Cloths" class="text-2xl">Cloths: </label>
+                <input id="cloths-field" type="number" class="rounded-md  bg-slate-200 py-2 px-8" name="Cloths">
+                <br>
+                <button onclick="calculateBtnClicked()" id="btn-calculate"
+                    class="text-xl font-medium my-8 bg-amber-400 rounded hover:bg-amber-300 px-8 py-3  border-0">Calculate</button>
+
+                <div class="price-shown-box">
+                    <h3 class="text-3xl font-bold text-center my-4">Total Expenses: <span id="total-expense">00</span>
+                        tk
+                    </h3>
+                    <h3 class="text-3xl font-bold text-center my-4">Balance: <span id="total-balance">00</span> tk</h3>
+                </div>
+
+
+                <!-- saving section -->
+                <div>
+
+                    <p>
+                        <label class="text-2xl" for="Save">Save: </label>
+                        <input id="save-field" type="number" class="rounded-md  bg-slate-200 py-2 px-8" name="Save"> %
+                        <button onclick="calculateSaveBtnClicked()" id="save-btn-calculate"
+                            class="text-xl font-medium my-8 bg-amber-400 rounded hover:bg-amber-300 px-8 py-3  border-0">Save</button>
+                    </p>
+
+                    <div class="price-shown-box">
+                        <h3 class="text-3xl font-bold text-center my-4">Saving Amount: <span id="total-saving">00</span>
+                            tk
+                        </h3>
+                        <h3 class="text-3xl font-bold text-center my-4">Remaining Balance: <span
+                                id="total-remaining">00</span> tk</h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- js -->
+    <script src="scripts/index.js"></script>
+</body>
+
+</html>
